@@ -19,6 +19,9 @@ If you want to extract multiple URLs in bulk, you can use the `-bulk` option and
 
 Replace `<FILE_PATH>` with the path to the text file containing the list of MultiUp URLs. The script will extract the 1fichier URLs and store them in the `output.txt` file.
 
+### 🔴 Now you can extract direct URLs for the file using `direct_urls.py`. Just give the previously extracted **_1fichier_** URL of add **_output.txt_** file from the `extract_urls.py` script.
+_Note: Due to the rate limit, it may take some time to extract all direct links._
+
 ## Example
 
 Suppose you have a MultiUp URL: _https://multiup.org/download/123456abcdef_. To extract the 1fichier URL, run the following command: ```python extract_urls.py https://multiup.org/download/123456abcdef```
