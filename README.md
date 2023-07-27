@@ -1,8 +1,8 @@
-# MultiUp to 1fichier URL Extractor
-
+# 🔗 MultiUp to 1fichier URL Extractor
+    
 This is a simple Python tool that extracts 1fichier URLs from MultiUp URLs. It utilizes BeautifulSoup for web scraping to find and extract the 1fichier download links.
-
-## How to Use
+  
+## 🟢 How to Use
 
 1. Clone or download this repository.
 2. Install the required dependencies by running the following command:
@@ -17,13 +17,18 @@ If you want to extract multiple URLs in bulk, you can use the `-bulk` option and
 
 ```python extract_urls.py -bulk <FILE_PATH>```
 
-Replace `<FILE_PATH>` with the path to the text file containing the list of MultiUp URLs. The script will extract the 1fichier URLs and store them in the `output.txt` file.
+Replace `<FILE_PATH>` with the path to the text file containing the list of MultiUp URLs. The script will extract the 1fichier URLs and store them in the `1fichier.txt` file.
+
+### 🔴 Now you can extract direct URLs for the file using `direct_urls.py`. Just give the previously extracted **_1fichier_** URL of add **_1fichier.txt_** file from the `extract_urls.py` script.
+_Note: Due to the rate limit, it may take some time to extract all direct links._
 
 ## Example
 
 Suppose you have a MultiUp URL: _https://multiup.org/download/123456abcdef_. To extract the 1fichier URL, run the following command: ```python extract_urls.py https://multiup.org/download/123456abcdef```
 
-The extracted 1fichier URL will be saved to the `output.txt` file.
+The extracted 1fichier URL will be saved to the `1fichier.txt` file.
+
+```python direct_urls.py -bulk 1fichier.txt``` or ```python direct_urls.py <Extracted 1fichier URL>```
 
 ## Disclaimer
 
