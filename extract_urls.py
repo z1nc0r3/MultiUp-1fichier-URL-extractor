@@ -26,7 +26,7 @@ def extract_bulk_urls(file_path):
     with open(file_path, "r") as file:
         urls = file.readlines()
 
-    output = open('output.txt', 'a')
+    output = open('1fichier.txt', 'a')
 
     for url in urls:
         url = url.strip().replace("download", "mirror")
@@ -51,12 +51,7 @@ def main():
             output_urls = extract_bulk_urls(file_path)
     else:
         url = sys.argv[1].replace("download", "mirror")
-        output_urls = [extract_1fichier_url(url)]
-
-    if output_urls:
-        with open("output.txt", "w") as output_file:
-            for url in output_urls:
-                output_file.write(url + "\n")
+        extract_1fichier_url(url)
 
 
 if __name__ == "__main__":
