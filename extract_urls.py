@@ -32,6 +32,7 @@ def extract_bulk_urls(file_path):
         url = url.strip().replace("download", "mirror")
         extracted_url = extract_1fichier_url(url)
         if extracted_url:
+            print(extracted_url)
             output.write(extracted_url + "\n")
             output.flush()
 
