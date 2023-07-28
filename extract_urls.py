@@ -1,6 +1,7 @@
 import sys
 import os
 import requests
+import re
 from bs4 import BeautifulSoup
 
 
@@ -13,8 +14,9 @@ def extract_1fichier_url(url):
 
         if button_element and "link" in button_element.attrs:
             link_value = button_element["link"]
-            return link_value
+            print(link_value)
         else:
+            print("Invalid URL. Please provide a valid 1fichier URL.")
             return None
 
 
@@ -50,7 +52,12 @@ def main():
             file_path = sys.argv[2]
             output_urls = extract_bulk_urls(file_path)
     else:
-        url = sys.argv[1].replace("download", "mirror")
+        url = sys.argv[1]
+        if "/en/" in url:
+            url = re.sub(r'/en/download/', '/en/mirror/', url)
+        else:
+            url = re.sub(r'/download/', '/en/mirror/', url)
+            
         extract_1fichier_url(url)
 
 
